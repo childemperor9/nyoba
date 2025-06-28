@@ -1,0 +1,24 @@
+/* Dalam file CSS kustom Anda, misalnya public/css/custom.css */
+
+/* Targetkan kontainer langsung di dalam header yang membungkus navbar items */
+header.header > .container-fluid.px-4:first-of-type {
+    display: flex; /* Pastikan ini adalah flex container */
+    align-items: center; /* Pusatkan item secara vertikal */
+    /* justify-content: space-between; <-- Hindari ini jika Anda menggunakan ms-auto */
+    /* justify-content: flex-start;  <-- Bisa digunakan jika ingin semua ke kiri, tapi ms-auto lebih fleksibel */
+}
+/* Dalam file CSS kustom Anda */
+
+/* Targetkan ul.header-nav yang berisi "Dashboard", "Users", "Settings" */
+/* Gunakan kombinasi selector yang lebih spesifik jika ada ul.header-nav lain yang tidak ingin Anda pengaruhi */
+.header-nav.d-lg-flex { /* Ini menargetkan ul yang spesifik di baris dashboard-users-settings */
+    flex-grow: 0;   /* Mencegah ul ini melebar mengisi ruang kosong */
+    flex-shrink: 0; /* Mencegah ul ini menyusut lebih dari yang seharusnya */
+    /* overflow: hidden; */ /* Opsional: Jika ada teks sangat panjang, bisa menyembunyikan kelebihan */
+}
+
+/* Pastikan nav-item di dalamnya tidak memiliki flex-grow yang tidak diinginkan */
+.header-nav .nav-item {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
